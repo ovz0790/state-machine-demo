@@ -1,0 +1,14 @@
+server:
+  port: ${PORT_TO_EXPOSE:8080}
+
+logging:
+  level:
+    ROOT: INFO
+    ru.vtb.dbo: DEBUG
+    org.springframework: INFO
+
+---
+
+spring:
+    profiles:
+       active: ifelse

@@ -1,0 +1,27 @@
+/*
+ * VTB Group. Do not reproduce without permission in writing.
+ * Copyright (c) 2017 VTB Group. All rights reserved.
+ */
+
+package ru.vtb.dbo.state.service;
+
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.statemachine.annotation.OnTransition;
+import org.springframework.statemachine.annotation.WithStateMachine;
+
+/**
+ * @author Olga_Zlobina
+ */
+@WithStateMachine
+@Slf4j
+public class ActionHandler {
+    @OnTransition(target = "A")
+    public void whileSaveDraft() {
+        log.info("SAVING DOC DRAFT");
+    }
+
+    @OnTransition(target = "B")
+    public void whileGerringSignature() {
+        log.info("GETTING SIGNATURE");
+    }
+}
