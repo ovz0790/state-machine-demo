@@ -33,7 +33,6 @@ public class TestElseIfController {
         stateMachine.start();
     }
 
-
     @RequestMapping(value = "change/var/{var}", method = RequestMethod.GET)
     @ResponseBody
     public void sendEvent(@PathVariable Integer var){
@@ -43,10 +42,8 @@ public class TestElseIfController {
     @RequestMapping(value = "get/state", method = RequestMethod.GET)
     @ResponseBody
     public States getState(){
-
         return stateMachine.getState().getId();
     }
-
 
     @RequestMapping(value = "send/event/{eventId}", method = RequestMethod.GET)
     @ResponseBody
@@ -55,5 +52,4 @@ public class TestElseIfController {
 
         return stateMachine.getState().getId();
     }
-
 }

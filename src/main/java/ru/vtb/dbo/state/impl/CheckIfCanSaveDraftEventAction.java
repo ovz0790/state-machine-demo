@@ -9,7 +9,7 @@ import ru.vtb.dbo.state.enums.Events;
  */
 public class CheckIfCanSaveDraftEventAction implements EventAction{
     @Override
-    public Events nextIvent() {
+    public Events nextEvent() {
         return Events.SAVE_DRAFT;
     }
 }

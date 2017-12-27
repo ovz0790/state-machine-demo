@@ -11,6 +11,6 @@ import java.util.List;
 @Getter
 @Setter
 public class Machine {
-    private List<Pass> machine;
+    private List<Path> machine;
     private Long docType;
 }

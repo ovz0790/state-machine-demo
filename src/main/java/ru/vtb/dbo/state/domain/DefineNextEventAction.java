@@ -28,6 +28,6 @@ public class DefineNextEventAction implements Action<States, Events> {
 
         EventAction action = (EventAction)applicationContext.getBean(beanId);
 
-        currentMachines.get(machineId).getExtendedState().getVariables().put("nextEvent", action.nextIvent());
+        currentMachines.get(machineId).getExtendedState().getVariables().put("nextEvent", action.nextEvent());
     }
 }

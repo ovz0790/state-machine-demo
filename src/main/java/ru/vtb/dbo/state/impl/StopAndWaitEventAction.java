@@ -14,7 +14,7 @@ import ru.vtb.dbo.state.enums.Events;
  */
 public class StopAndWaitEventAction implements EventAction{
     @Override
-    public Events nextIvent() {
+    public Events nextEvent() {
         return null;
     }
 }

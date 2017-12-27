@@ -14,7 +14,7 @@ import ru.vtb.dbo.state.enums.Events;
  */
 public class CheckIfCanSignatureEventAction implements EventAction{
     @Override
-    public Events nextIvent() {
+    public Events nextEvent() {
         return Events.GET_SIGNATURE;
     }
 }
