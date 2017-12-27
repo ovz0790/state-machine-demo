@@ -4,9 +4,12 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 import org.springframework.http.converter.json.GsonBuilderUtils;
 import org.springframework.http.converter.json.GsonFactoryBean;
 import org.springframework.statemachine.StateMachine;
+import ru.vtb.dbo.state.domain.DefineNextEventAction;
+import ru.vtb.dbo.state.domain.Machine;
 import ru.vtb.dbo.state.enums.Events;
 import ru.vtb.dbo.state.enums.States;
 
@@ -23,10 +26,23 @@ import java.util.concurrent.ConcurrentMap;
 @Configuration
 public class AppConfig {
 
+
     @Bean
-    public Map<Long, StateMachine<States, Events>> machine(){
+    public Map<Long, Machine> machineForDocType(){
+        final ConcurrentMap<Long, Machine> machines = new ConcurrentHashMap<>();
+        return machines;
+    }
+
+    @Bean
+    public Map<Long, StateMachine<States, Events>> currentMachines(){
         final ConcurrentMap<Long, StateMachine<States, Events>> machines = new ConcurrentHashMap<>();
         return machines;
+    }
+
+    @Bean
+    @Scope("prototype")
+    public DefineNextEventAction action(){
+        return new DefineNextEventAction();
     }
 /*
     public static void main(String[] args){

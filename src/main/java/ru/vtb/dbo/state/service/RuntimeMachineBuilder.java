@@ -6,6 +6,7 @@ import org.springframework.statemachine.StateMachine;
 import org.springframework.statemachine.config.StateMachineBuilder;
 import org.springframework.statemachine.config.builders.StateMachineTransitionConfigurer;
 import org.springframework.stereotype.Service;
+import ru.vtb.dbo.state.domain.DefineNextEventAction;
 import ru.vtb.dbo.state.enums.Events;
 import ru.vtb.dbo.state.enums.States;
 
@@ -33,7 +34,7 @@ public class RuntimeMachineBuilder {
 
         builder.configureStates()
                 .withStates()
-                .initial(States.A)
+                .initial(States.START_LC)
                 .states(EnumSet.allOf(States.class));
         final StateMachineTransitionConfigurer<States, Events> configureTransitions = builder.configureTransitions();
 
