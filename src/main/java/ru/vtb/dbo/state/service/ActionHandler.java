@@ -16,7 +16,7 @@ public class ActionHandler {
     }
 
     @OnTransition(target = "B")
-    public void whileGerringSignature() {
+    public void whileGettingSignature() {
         log.info("GETTING SIGNATURE");
     }
 }
