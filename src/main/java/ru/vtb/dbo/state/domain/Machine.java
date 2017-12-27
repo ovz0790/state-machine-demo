@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author Olga_Zlobina
@@ -11,6 +12,6 @@ import java.util.List;
 @Getter
 @Setter
 public class Machine {
-    private List<Pass> machine;
+    private Map<PassKey, Pass> machine;
     private Long docType;
 }

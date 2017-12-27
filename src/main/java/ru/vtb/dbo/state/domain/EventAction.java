@@ -6,5 +6,5 @@ package ru.vtb.dbo.state.domain;
  * @author Olga_Zlobina
  */
 public interface EventAction {
-    Events nextIvent();
+    Events nextIvent(EDoc eDoc);
 }

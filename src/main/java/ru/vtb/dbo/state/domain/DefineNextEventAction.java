@@ -18,16 +18,22 @@ public class DefineNextEventAction implements Action<States, Events> {
     private ApplicationContext applicationContext;
 
     @Autowired
+    private Map<Long, Machine> machineForDocType;
+
+    @Autowired
     private Map<Long, StateMachine<States, Events>> currentMachines;
 
     @Override
     public void execute(StateContext<States, Events> stateContext) {
-        String beanId = stateContext.getExtendedState().get("eventActionId", String.class);
 
-        Long machineId =  stateContext.getExtendedState().get("id", Long.class);
-
+        Long docTypeId = stateContext.getExtendedState().get("docTypeId", Long.class);
+        EDoc eDoc =  stateContext.getExtendedState().get("edoc", EDoc.class);
+        PassKey pk = new PassKey().setEvent(stateContext.getEvent())
+                .setStateFrom(stateContext.getSource().getId())
+                .setStateTo(stateContext.getTarget().getId());
+        String beanId = machineForDocType.get(docTypeId).getMachine().get(pk).getEventActionId();
         EventAction action = (EventAction)applicationContext.getBean(beanId);
+        currentMachines.get(eDoc.getId()).getExtendedState().getVariables().put("nextEvent", action.nextIvent(eDoc));
 
-        currentMachines.get(machineId).getExtendedState().getVariables().put("nextEvent", action.nextIvent());
     }
 }

@@ -11,9 +11,8 @@ import ru.vtb.dbo.state.domain.Pass;
 import ru.vtb.dbo.state.enums.Events;
 import ru.vtb.dbo.state.enums.States;
 
+import java.util.Collection;
 import java.util.EnumSet;
-import java.util.List;
-import java.util.Map;
 
 /**
  * @author Olga_Zlobina
@@ -23,9 +22,9 @@ import java.util.Map;
 public class CreateMachineService {
 
     @Autowired
-    DefineNextEventAction action;
+    private DefineNextEventAction action;
 
-    public StateMachine<States, Events> createMachine(List<Pass> machine) throws Exception {
+    public StateMachine<States, Events> createMachine(Collection<Pass> machine) throws Exception {
         final StateMachineBuilder.Builder<States, Events> builder = StateMachineBuilder.builder();
 
             builder.configureStates()
@@ -39,8 +38,8 @@ public class CreateMachineService {
                     try {
                         configureTransitions
                                 .withExternal()
-                                .source(pass.getStateFrom()).target(pass.getStateTo())
-                                .event(pass.getEvent())
+                                .source(pass.getPassKey().getStateFrom()).target(pass.getPassKey().getStateTo())
+                                .event(pass.getPassKey().getEvent())
                                 .action(action)
                                 .and();
                     } catch (Exception e) {
