@@ -5,10 +5,9 @@ package ru.vtb.dbo.state.enums;
  */
 public enum Events {
     START,
+    START_LC,
     SAVE_DRAFT,
     GET_SIGNATURE,
-    START_AGAIN,
-    PROCESS_DOC,
-    HAS_ERROR,
-    TO_START_POINT;
+    GET_SIGNATURE1,
+    PROCESS_DOC;
 }

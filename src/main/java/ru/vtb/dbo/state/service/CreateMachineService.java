@@ -7,7 +7,7 @@ import org.springframework.statemachine.config.StateMachineBuilder;
 import org.springframework.statemachine.config.builders.StateMachineTransitionConfigurer;
 import org.springframework.stereotype.Service;
 import ru.vtb.dbo.state.domain.DefineNextEventAction;
-import ru.vtb.dbo.state.domain.Pass;
+import ru.vtb.dbo.state.domain.Path;
 import ru.vtb.dbo.state.enums.Events;
 import ru.vtb.dbo.state.enums.States;
 
@@ -24,12 +24,12 @@ public class CreateMachineService {
     @Autowired
     private DefineNextEventAction action;
 
-    public StateMachine<States, Events> createMachine(Collection<Pass> machine) throws Exception {
+    public StateMachine<States, Events> createMachine(Collection<Path> machine) throws Exception {
         final StateMachineBuilder.Builder<States, Events> builder = StateMachineBuilder.builder();
 
             builder.configureStates()
                     .withStates()
-                    .initial(States.START_LC)
+                    .initial(States.STARTED_LC)
                     .states(EnumSet.allOf(States.class));
 
         final StateMachineTransitionConfigurer<States, Events> configureTransitions = builder.configureTransitions();
@@ -38,8 +38,8 @@ public class CreateMachineService {
                     try {
                         configureTransitions
                                 .withExternal()
-                                .source(pass.getPassKey().getStateFrom()).target(pass.getPassKey().getStateTo())
-                                .event(pass.getPassKey().getEvent())
+                                .source(pass.getPathKey().getStateFrom()).target(pass.getPathKey().getStateTo())
+                                .event(pass.getPathKey().getEvent())
                                 .action(action)
                                 .and();
                     } catch (Exception e) {

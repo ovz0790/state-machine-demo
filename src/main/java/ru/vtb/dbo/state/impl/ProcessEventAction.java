@@ -1,4 +1,9 @@
 
+/*
+ * VTB Group. Do not reproduce without permission in writing.
+ * Copyright (c) 2017 VTB Group. All rights reserved.
+ */
+
 package ru.vtb.dbo.state.impl;
 
 import org.springframework.stereotype.Service;
@@ -10,9 +15,9 @@ import ru.vtb.dbo.state.enums.Events;
  * @author Olga_Zlobina
  */
 @Service
-public class CheckIfCanSaveDraftEventAction implements EventAction{
+public class ProcessEventAction implements EventAction{
     @Override
     public Events nextEvent(EDoc eDoc) {
-        return Events.SAVE_DRAFT;
+        return Events.PROCESS_DOC;
     }
 }

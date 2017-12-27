@@ -2,8 +2,8 @@ package ru.vtb.dbo.state.domain;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.experimental.Accessors;
 
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -11,7 +11,8 @@ import java.util.Map;
  */
 @Getter
 @Setter
+@Accessors(chain = true)
 public class Machine {
-    private Map<PassKey, Pass> machine;
+    private Map<PathKey, Path> machine;
     private Long docType;
 }

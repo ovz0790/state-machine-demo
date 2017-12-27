@@ -4,10 +4,11 @@ package ru.vtb.dbo.state.enums;
  * @author Olga_Zlobina
  */
 public enum States {
-    START_LC,
-    B,
-    C,
-    D,
-    E,
-    F;
+    START,
+    STARTED_LC,
+    DRAFT,
+    SIGNATURED,
+    SIGNATURED1,
+    PROCESSED,
+    WAITING;
 }
