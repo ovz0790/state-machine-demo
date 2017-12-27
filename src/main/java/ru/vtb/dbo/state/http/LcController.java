@@ -58,11 +58,16 @@ public class LcController {
     }
 
 
-    @RequestMapping(value = "machine/start/{docId}", method = RequestMethod.GET)
+    @RequestMapping(value = "machine/start}", method = RequestMethod.GET)
     @ResponseBody
-    public void startDocLc(@PathVariable Long docId) throws Exception {
-        StateMachine<States, Events> machine =  currentMachines.get(docId);
+    public void startDocLc(@RequestBody EDoc eDoc) throws Exception {
+        StateMachine<States, Events> machine =  currentMachines.get(eDoc.getId());
 
+
+        machine.getExtendedState().getVariables().put("id", eDoc.getId());
+
+        machine.getExtendedState().getVariables().put("eventActionId",
+                machineForDocType.get(eDoc.getDocTypeId()).getMachine().get(0).getEventActionId());
         machine.start();
         machine.sendEvent(Events.START);
     }
