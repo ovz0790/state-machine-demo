@@ -62,7 +62,7 @@ public class LcController {
 
     }
 
-    @RequestMapping(value = "machine/start}", method = RequestMethod.GET)
+    @RequestMapping(value = "machine/start", method = RequestMethod.POST)
     @ResponseBody
     public void startDocLc(@RequestBody EDoc eDoc) throws Exception {
         StateMachine<States, Events> machine =  currentMachines.get(eDoc.getId());
@@ -79,7 +79,7 @@ public class LcController {
     }
 
 
-    @RequestMapping(value = "machine/send/event/{eventId}}", method = RequestMethod.GET)
+    @RequestMapping(value = "machine/send/event/{eventId}}", method = RequestMethod.POST)
     @ResponseBody
     public void startDocLc(@PathVariable String eventId, @RequestBody EDoc eDoc) throws Exception {
 
@@ -87,6 +87,16 @@ public class LcController {
 
         machine.sendEvent(Events.valueOf(eventId));
         runMachine(machine);
+
+    }
+
+    @RequestMapping(value = "machine/get/state/{docId}}", method = RequestMethod.GET)
+    @ResponseBody
+    public States getDocState(@PathVariable String docId) throws Exception {
+
+        StateMachine<States, Events> machine =  currentMachines.get(docId);
+
+        return machine.getState().getId();
 
     }
 
