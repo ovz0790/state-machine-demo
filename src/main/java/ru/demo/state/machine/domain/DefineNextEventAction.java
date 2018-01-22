@@ -1,12 +1,12 @@
-package ru.vtb.dbo.state.domain;
+package ru.demo.state.machine.domain;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.statemachine.StateContext;
 import org.springframework.statemachine.StateMachine;
 import org.springframework.statemachine.action.Action;
-import ru.vtb.dbo.state.enums.Events;
-import ru.vtb.dbo.state.enums.States;
+import ru.demo.state.machine.enums.Events;
+import ru.demo.state.machine.enums.States;
 
 import java.util.Map;
 

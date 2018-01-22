@@ -1,6 +1,6 @@
-package ru.vtb.dbo.state.domain;
+package ru.demo.state.machine.domain;
 
-import ru.vtb.dbo.state.enums.Events;
+import ru.demo.state.machine.enums.Events;
 
 /**
  * @author Olga_Zlobina

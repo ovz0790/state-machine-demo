@@ -1,10 +1,9 @@
-
-package ru.vtb.dbo.state.impl;
+package ru.demo.state.machine.impl;
 
 import org.springframework.stereotype.Service;
-import ru.vtb.dbo.state.domain.EDoc;
-import ru.vtb.dbo.state.domain.EventAction;
-import ru.vtb.dbo.state.enums.Events;
+import ru.demo.state.machine.domain.EDoc;
+import ru.demo.state.machine.domain.EventAction;
+import ru.demo.state.machine.enums.Events;
 
 /**
  * @author Olga_Zlobina

@@ -1,4 +1,4 @@
-package ru.vtb.dbo.state.enums;
+package ru.demo.state.machine.enums;
 
 /**
  * @author Olga_Zlobina

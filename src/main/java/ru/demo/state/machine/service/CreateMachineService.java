@@ -1,4 +1,4 @@
-package ru.vtb.dbo.state.service;
+package ru.demo.state.machine.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,10 +6,10 @@ import org.springframework.statemachine.StateMachine;
 import org.springframework.statemachine.config.StateMachineBuilder;
 import org.springframework.statemachine.config.builders.StateMachineTransitionConfigurer;
 import org.springframework.stereotype.Service;
-import ru.vtb.dbo.state.domain.DefineNextEventAction;
-import ru.vtb.dbo.state.domain.Path;
-import ru.vtb.dbo.state.enums.Events;
-import ru.vtb.dbo.state.enums.States;
+import ru.demo.state.machine.enums.Events;
+import ru.demo.state.machine.enums.States;
+import ru.demo.state.machine.domain.DefineNextEventAction;
+import ru.demo.state.machine.domain.Path;
 
 import java.util.Collection;
 import java.util.EnumSet;

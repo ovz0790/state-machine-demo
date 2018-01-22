@@ -1,17 +1,11 @@
-/*
- * VTB Group. Do not reproduce without permission in writing.
- * Copyright (c) 2017 VTB Group. All rights reserved.
- */
+package ru.demo.state.machine;
 
-package ru.vtb.dbo.state;
+import ru.demo.state.machine.domain.Machine;
+import ru.demo.state.machine.domain.Path;
+import ru.demo.state.machine.domain.PathKey;
+import ru.demo.state.machine.enums.Events;
+import ru.demo.state.machine.enums.States;
 
-import ru.vtb.dbo.state.domain.Machine;
-import ru.vtb.dbo.state.domain.Path;
-import ru.vtb.dbo.state.domain.PathKey;
-import ru.vtb.dbo.state.enums.Events;
-import ru.vtb.dbo.state.enums.States;
-
-import javax.swing.plaf.nimbus.State;
 import java.util.HashMap;
 import java.util.Map;
 

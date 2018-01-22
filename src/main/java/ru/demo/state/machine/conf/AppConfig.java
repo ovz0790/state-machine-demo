@@ -1,21 +1,14 @@
-package ru.vtb.dbo.state.conf;
+package ru.demo.state.machine.conf;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
-import org.springframework.http.converter.json.GsonBuilderUtils;
-import org.springframework.http.converter.json.GsonFactoryBean;
 import org.springframework.statemachine.StateMachine;
-import ru.vtb.dbo.state.domain.DefineNextEventAction;
-import ru.vtb.dbo.state.domain.Machine;
-import ru.vtb.dbo.state.enums.Events;
-import ru.vtb.dbo.state.enums.States;
+import ru.demo.state.machine.domain.DefineNextEventAction;
+import ru.demo.state.machine.domain.Machine;
+import ru.demo.state.machine.enums.Events;
+import ru.demo.state.machine.enums.States;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;

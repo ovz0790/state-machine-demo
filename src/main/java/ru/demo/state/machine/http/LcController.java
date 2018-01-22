@@ -1,9 +1,4 @@
-/*
- * VTB Group. Do not reproduce without permission in writing.
- * Copyright (c) 2017 VTB Group. All rights reserved.
- */
-
-package ru.vtb.dbo.state.http;
+package ru.demo.state.machine.http;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -15,11 +10,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import ru.vtb.dbo.state.domain.EDoc;
-import ru.vtb.dbo.state.domain.Machine;
-import ru.vtb.dbo.state.enums.Events;
-import ru.vtb.dbo.state.enums.States;
-import ru.vtb.dbo.state.service.CreateMachineService;
+import ru.demo.state.machine.domain.EDoc;
+import ru.demo.state.machine.domain.Machine;
+import ru.demo.state.machine.enums.Events;
+import ru.demo.state.machine.enums.States;
+import ru.demo.state.machine.service.CreateMachineService;
 import java.util.Map;
 
 /**

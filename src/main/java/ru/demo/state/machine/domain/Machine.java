@@ -1,4 +1,4 @@
-package ru.vtb.dbo.state.domain;
+package ru.demo.state.machine.domain;
 
 import lombok.Getter;
 import lombok.Setter;

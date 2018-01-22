@@ -1,9 +1,4 @@
-/*
- * VTB Group. Do not reproduce without permission in writing.
- * Copyright (c) 2017 VTB Group. All rights reserved.
- */
-
-package ru.vtb.dbo.state.domain;
+package ru.demo.state.machine.domain;
 
 import lombok.Getter;
 import org.springframework.stereotype.Service;
